@@ -1,0 +1,43 @@
+# Python
+__pycache__/
+*.py[cod]
+*.egg-info/
+.pytest_cache/
+.ruff_cache/
+.mypy_cache/
+.venv/
+venv/
+
+# Editors and operating systems
+.idea/
+.vscode/
+.DS_Store
+Thumbs.db
+
+# Secrets and local settings
+.env
+.env.*
+!.env.example
+kaggle.json
+
+# Data and generated artefacts
+data/raw/**
+data/interim/**
+data/processed/**
+models/**
+outputs/**
+submissions/**
+logs/**
+
+# Keep the directory layout in Git
+!data/raw/.gitkeep
+!data/interim/.gitkeep
+!data/processed/.gitkeep
+!models/.gitkeep
+!outputs/.gitkeep
+!submissions/.gitkeep
+!logs/.gitkeep
+
+# Notebook artefacts
+.ipynb_checkpoints/
+
