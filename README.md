@@ -35,7 +35,16 @@ pip install -e ".[dev]"
 Copy-Item .env.example .env
 ```
 
-Para transferir dados de uma competição, aceita primeiro as regras no Kaggle e executa:
+Para autenticar o cliente Kaggle apenas na sessão atual do PowerShell, gera um novo
+token no Kaggle e define-o sem o guardar no repositório:
+
+```powershell
+$env:KAGGLE_API_TOKEN = "COLOCA_AQUI_O_NOVO_TOKEN"
+kaggle competitions list
+```
+
+Não coloques o token diretamente em código, notebooks ou commits. Para transferir
+dados de uma competição, aceita primeiro as regras no Kaggle e executa:
 
 ```powershell
 kaggle competitions download -c NOME-DA-COMPETICAO -p data/raw/NOME-DA-COMPETICAO
