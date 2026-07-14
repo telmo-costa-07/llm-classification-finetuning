@@ -1,0 +1,35 @@
+experiment:
+  name: llm_classification_baseline
+  seed: 42
+
+data:
+  competition: llm-classification-finetuning
+  train_file: data/raw/llm-classification-finetuning/train.csv
+  test_file: data/raw/llm-classification-finetuning/test.csv
+  sample_submission_file: data/raw/llm-classification-finetuning/sample_submission.csv
+  id_column: id
+  text_columns:
+    - prompt
+    - response_a
+    - response_b
+  target_columns:
+    - winner_model_a
+    - winner_model_b
+    - winner_tie
+
+validation:
+  strategy: stratified_kfold
+  folds: 5
+
+metric:
+  name: multiclass_log_loss
+  greater_is_better: false
+
+model:
+  name: tfidf_logistic_regression
+
+paths:
+  model_dir: models/llm_classification_baseline
+  output_dir: outputs/llm_classification_baseline
+  submission_file: submissions/llm_classification_baseline.csv
+
